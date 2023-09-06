@@ -3,6 +3,7 @@
     --white: white;
     --gray-500: #6B7280;
     --gray-900: #111827;
+    --gray-200: #9ca3af;
     --primary-color: #1D4ED8;
     --secondary-color: #3b82f6;
     --dark-blue: #1e3a8a;
@@ -183,7 +184,7 @@ input[type=submit]:hover {
 aside {
     display: flex;
     position: fixed;
-    width: 15rem;
+    width: 18rem;
     overflow-y: auto;
     height: 100vh;
     padding: 3rem 1.5rem;
@@ -191,6 +192,10 @@ aside {
     align-items: center;
     gap: 3rem;
     background-color: var(--primary-color);
+    transform: translateX(-100%);
+    top: 0;
+    left: 0;
+    z-index: 50;
 }
 
 aside .top-container {
@@ -215,11 +220,14 @@ aside .top-container h5 {
 
 }
 
-aside .top-container, aside .container, aside .bottom-container {
+aside .top-container,
+aside .container,
+aside .bottom-container {
     width: 100%;
 }
 
-aside .container ul, aside .bottom-container ul {
+aside .container ul,
+aside .bottom-container ul {
     list-style: none;
     display: flex;
     padding: 0.625rem 0;
@@ -227,7 +235,8 @@ aside .container ul, aside .bottom-container ul {
     row-gap: 1rem;
 }
 
-aside .container li, aside .bottom-container li {
+aside .container li,
+aside .bottom-container li {
     display: flex;
     padding: 0.75rem;
     align-items: center;
@@ -236,11 +245,13 @@ aside .container li, aside .bottom-container li {
     cursor: pointer;
 }
 
-aside .container li:hover, aside .bottom-container li:hover{
+aside .container li:hover,
+aside .bottom-container li:hover {
     background-color: var(--dark-blue);
 }
 
-aside .container a, aside .bottom-container a {
+aside .container a,
+aside .bottom-container a {
     width: 100%;
     display: flex;
     align-items: center;
@@ -253,15 +264,71 @@ aside .container a, aside .bottom-container a {
     line-height: normal;
 }
 
-aside .container a svg, aside .bottom-container a svg {
+aside .container a svg,
+aside .bottom-container a svg {
     fill: var(--white);
     width: 1.5rem;
     height: 1.5rem;
 }
 
-.bottom-container{
-    margin-top: calc(100% - 2rem);
+.bottom-container {
+    margin-top: calc(100% - 4rem);
 }
+
+header,
+main {
+    padding: 0 0.5rem;
+}
+header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 2px 0 rgb(0 0 0 / 0.05);
+    border-bottom-width: 1px;
+
+    & svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .nav-profile {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 0.2rem;
+
+        & img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        & div {
+            & h6 {
+                color: var(--gray-900);
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+
+            & p {
+                color: var(--gray-200);
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+
+        }
+    }
+}
+
+
+main {
+    margin-top: 2.5rem;
+}
+
 
 @media (min-width: 1024px) {
     .auth-card .card {
@@ -274,11 +341,27 @@ aside .container a svg, aside .bottom-container a svg {
         column-gap: 1.5rem;
     }
 
-    aside{
+    aside {
         padding-bottom: 0;
+        transform: translateX(0%);
     }
 
-    .bottom-container{
+    .bottom-container {
         margin-top: 0;
+    }
+
+    .head-main {
+        padding-left: 18rem;
+    }
+
+    header {
+        & svg {
+            visibility: hidden;
+        }
+    }
+
+    header,
+    main {
+        padding: 0 2.5rem;
     }
 }
