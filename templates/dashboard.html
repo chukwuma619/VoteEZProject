@@ -11,9 +11,7 @@
 
 <body>
     <section>
-
-
-        <aside style="background-color: blue;">
+        <aside role="navigation" id="aside">
             <div class="top-container">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -91,14 +89,21 @@
 
                 </ul>
             </div>
+            <button type="button" id="close-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-rule="evenodd" d="M17.5 17.5L9.25 12l8.25-5.5l-1-1.5L6 12l10.5 7z" />
+                </svg>
+            </button>
         </aside>
 
         <div class="head-main">
             <header>
+                <button type="button" id="open-nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z" />
+                    </svg>
+                </button>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z" />
-                </svg>
 
                 <div class="nav-profile">
 
@@ -118,6 +123,7 @@
         </div>
 
     </section>
+    <script src="/static/JS/script.js"></script>
 </body>
 
 </html>

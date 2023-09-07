@@ -1,28 +1,15 @@
-$(document).ready(function () {
-    // Side Nav Bar
-    $("#open-nav-btn").click(function () {         
-        $("#side-navbar").removeClass("translate-x-[-100%]");
-        $("#side-navbar").addClass("translate-x-0");
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Side Navigation
+  const open_nav_button = document.getElementById("open-nav");
+  const close_nav_button = document.getElementById("close-nav");
+  const side_nav = document.getElementById("aside");
 
-    $("#close-nav-btn").click(function () { 
-        console.log("clicked");
-        $("#side-navbar").removeClass("translate-x-0");
-        $("#side-navbar").addClass("translate-x-[-100%]");
-        
-    });
+  open_nav_button.addEventListener("click", function () {
+    side_nav.classList.add("default-translate");
+  });
 
-    // Profile Dropdown
-    $("#profile-nav").hover(function () {
-            // over
-            $("#profile-dropdown").removeClass("hidden");
-            
-        }, function () {
-            // out
-            setTimeout(() => {
-                $("#profile-dropdown").addClass("hidden"); 
-            }, 1000);
-            
-        }
-    );
+  close_nav_button.addEventListener("click", function () {
+    side_nav.classList.remove("default-translate");
+  });
+
 });
