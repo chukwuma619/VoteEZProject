@@ -274,6 +274,11 @@ aside .bottom-container li:hover {
     background-color: var(--dark-blue);
 }
 
+
+.link-active {
+    background-color: var(--dark-blue);
+}
+
 aside .container a,
 aside .bottom-container a {
     width: 100%;
@@ -358,7 +363,147 @@ header {
 
 main {
     margin-top: 2.5rem;
+
 }
+
+/* Vote Search Page */
+
+#vote-search {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+main #vote-search .breadcrumb ol svg {
+    fill: var(--gray-500);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+main #vote-search .breadcrumb ol svg:hover {
+    fill: var(--primary-color);
+}
+
+
+main #vote-search .breadcrumb ol {
+    display: flex;
+    list-style: none;
+
+    & li div {
+        display: flex;
+        align-items: center;
+
+        & svg path {
+            fill: var(--gray-500);
+        }
+
+        & svg path:hover {
+            fill: var(--primary-color);
+        }
+
+        & a {
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+
+        & a:hover {
+            color: var(--primary-color);
+        }
+    }
+
+}
+
+#vote-search form {
+
+    display: flex;
+    row-gap: 1.5rem;
+    flex-direction: column;
+
+    & label {
+        display: block;
+        color: var(--gray-900);
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+
+    }
+
+    & div {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+        & h4 {
+            position: absolute;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            top: 35%;
+            left: calc(100% - 99%);
+            margin-left: 1rem;
+        }
+
+        & input {
+            width: 95%;
+            border-radius: 2rem;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        & button {
+            border-radius: 50%;
+            height: 1.75rem;
+            width: 1.75rem;
+            background-color: var(--dark-blue);
+            border: none;
+            position: absolute;
+            top: 28%;
+            right: calc(100% - 99%);
+            cursor: pointer;
+            margin-right: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & svg path {
+
+                fill: var(--white);
+            }
+        }
+
+
+    }
+
+}
+
+
+/* #vote-search .recent-election-cont{
+    margin-top: 5rem;
+    & h3{
+        display: block;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    
+    .recent-election{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        & div{
+            background-color: var(--gray-200/50%);
+        }
+    }
+} */
+
+
+/* @media (min-width: 768px) { ... } */
 
 
 @media (min-width: 1024px) {
@@ -375,6 +520,10 @@ main {
     aside {
         padding-bottom: 0;
         transform: translateX(0%);
+
+        & button {
+            display: none;
+        }
     }
 
     .bottom-container {
@@ -400,6 +549,29 @@ main {
 
         & button {
             visibility: hidden;
+        }
+    }
+
+    #vote-search form {
+        & label {
+            font-size: 1.25rem;
+        }
+
+        & div {
+
+            & h4 {
+                left: 25%;
+                margin-left: 0.75rem;
+            }
+
+            & input{
+                width: 50%;
+            }
+
+            & button{
+                right: 25%;
+                margin-right: 0.75rem;
+            }
         }
     }
 }
