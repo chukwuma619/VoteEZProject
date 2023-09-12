@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "templates/vote-post.html",
+    "templates/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      flexBasis: {
+        'form': "calc(50% - 0.75rem)",
+      }
+    }
   },
   plugins: [],
 }

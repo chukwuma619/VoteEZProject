@@ -4,67 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/styles.css">
     <title>VoteEZ - Signup</title>
 </head>
 
 <body>
-    <section class="auth-card">
-        <div class="card">
-            <div class="top-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+    <div class="flex items-center justify-center min-h-screen">
+        <div
+            class="flex items-center justify-center flex-col p-4 border rounded gap-y-6 shadow w-96 min-w-fit max-w-lg ">
+            <div class="flex flex-col items-center gap-y-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="fill-blue-800 w-16 h-16" viewBox="0 0 64 64">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M60.5875 16.5C61.0325 15.09 60.5875 14.065 58.6188 14.065H52.0725C50.4212 14.065 49.6587 14.9625 49.2137 15.9225C49.2137 15.9225 45.8462 24.1225 41.1437 29.4387C39.6187 30.9762 38.92 31.4888 38.0938 31.4888C37.6488 31.4888 37.0762 30.9762 37.0762 29.5675V16.4338C37.0762 14.7688 36.5687 14 35.17 14H24.875C23.8575 14 23.2225 14.7688 23.2225 15.5375C23.2225 17.1388 25.5737 17.5237 25.8275 22.0075V31.75C25.8275 33.8638 25.4525 34.25 24.62 34.25C22.3963 34.25 16.995 25.9862 13.755 16.57C13.125 14.705 12.485 14 10.8325 14H4.22375C2.3175 14 2 14.8963 2 15.8575C2 17.5875 4.22375 26.2988 12.3575 37.8288C17.7587 45.7038 25.4475 49.9362 32.3737 49.9362C36.5687 49.9362 37.0762 48.975 37.0762 47.3737V41.4162C37.0762 39.495 37.4575 39.175 38.7925 39.175C39.745 39.175 41.4613 39.6863 45.3375 43.4663C49.785 47.95 50.5475 50 53.0262 50H59.5713C61.4775 50 62.3675 49.0387 61.8587 47.1813C61.2875 45.3238 59.1263 42.6338 56.33 39.4313C54.805 37.6388 52.5175 35.6525 51.8187 34.6912C50.8662 33.41 51.12 32.8975 51.8187 31.745C51.755 31.745 59.7625 20.3425 60.5875 16.495" />
                 </svg>
                 <div>
-                    <h3>Sign Up</h3>
-                    <p>Create an account to continue</p>
+                    <h3 class="text-center font-semibold truncate text-xl">Sign Up</h3>
+                    <p class="text-center text-base">Create an account to continue</p>
                 </div>
             </div>
 
-            <form action="" method="post" class="auth-form">
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
-                </div>
-                <div class="form-name-cont">
-                    <div>
-                        <label for="first-name">First name</label>
-                        <input type="text" name="first-name" id="first-name" placeholder="Enter first name" autocomplete="family-name">
-                    </div>
-    
-                    <div>
-                        <label for="last-name">Last name</label>
-                        <input type="text" name="lasst-name" id="last-name" placeholder="Enter last name" autocomplete="given-name">
-                    </div>
-                </div>
-                
+            <form action="" method="post" class="w-[inherit] flex flex-row items-stretch flex-wrap gap-6">
 
-                <div>
-                    <label for="password">Password</label>
-                    <div class="pwd-cont">
-                        <input type="password" name="password" id="password" placeholder="Enter password">
-                        <svg class="pwd-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9ZM12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17ZM12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5Z"
-                                fill="#6B7280" />
-                        </svg>
-                    </div>
-               </div>
-
-                <div>
-                    <input type="submit" value="Sign In">
+                <div class="basis-full md:basis-form">
+                    <label for="last_name" class="block text-sm font-medium">Last name</label>
+                    <input type="text" name="last_name" id="last_name"
+                        class="w-full h-9 rounded pl-2 mt-2 border-none outline outline-1 outline-blue-600 focus:ring-2 placeholder:text-sm"
+                        autocomplete="family-name" placeholder="Enter your last name">
                 </div>
+
+                <div class="basis-full md:basis-form">
+                    <label for="first_name" class="block text-sm font-medium">First name</label>
+                    <input type="text" name="first_name" id="first_name"
+                        class="w-full h-9 rounded pl-2 mt-2 border-none outline outline-1 outline-blue-600 focus:ring-2 placeholder:text-sm"
+                        autocomplete="given-name" placeholder="Enter your first name">
+                </div>
+
+                <div class="basis-full">
+                    <label for="email" class="block text-sm font-medium">Email</label>
+                    <input type="email" name="email" id="email"
+                        class="w-full h-9 rounded pl-2 mt-2 border-none outline outline-1 outline-blue-600 focus:ring-2 placeholder:text-sm"
+                        autocomplete="email" placeholder="Enter your email">
+                </div>
+
+
+                <div class="basis-full md:basis-form">
+                    <label for="password" class="block text-sm font-medium">Password</label>
+                    <input type="password" name="password" id="password"
+                        class="w-full mt-2 h-9 rounded pl-2 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm"
+                        placeholder="Enter password" autocomplete="new-password">
+                </div>
+
+                <div class="basis-full md:basis-form">
+                    <label for="confirm_password" class="block text-sm font-medium">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="confirm_password"
+                        class="w-full mt-2 h-9 rounded pl-2 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm"
+                        placeholder="Enter confirm password" autocomplete="new-password">
+                </div>
+
+                <div class="basis-full">
+                    <button type="submit"
+                        class="bg-blue-800 text-white rounded w-full text-base py-2 hover:bg-blue-600">Sign in</button>
+                </div>
+
             </form>
 
             <div>
-                <p class="acct-info">Already have an account? <a href="">Sign in</a></p>
+                <p class="text-sm">Already have an account? <a href="" class="text-blue-800">Sign in</a></p>
             </div>
-
-
         </div>
-    </section>
+    </div>
 </body>
 
 </html>
