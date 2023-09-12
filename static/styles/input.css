@@ -6,4 +6,10 @@
     html {
         font-family: 'Inter', sans-serif;
     }
-  }
+}
+
+.remove_clear::-webkit-search-cancel-button,
+.remove_clear::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}

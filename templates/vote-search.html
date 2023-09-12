@@ -4,83 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/styles/index.css">
-
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/styles.css">
+    <script src="/static/JS/script.js" defer></script>
+    <title>VoteEZ - Search</title>
 </head>
 
 <body>
-    <section>
-        <aside role="navigation" id="aside">
-            <div class="top-container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M45.4406 12.375C45.7744 11.3175 45.4406 10.5487 43.9641 10.5487H39.0544C37.8159 10.5487 37.2441 11.2219 36.9103 11.9419C36.9103 11.9419 34.3847 18.0919 30.8578 22.0791C29.7141 23.2322 29.19 23.6166 28.5703 23.6166C28.2366 23.6166 27.8072 23.2322 27.8072 22.1756V12.3253C27.8072 11.0766 27.4266 10.5 26.3775 10.5H18.6562C17.8931 10.5 17.4169 11.0766 17.4169 11.6531C17.4169 12.8541 19.1803 13.1428 19.3706 16.5056V23.8125C19.3706 25.3978 19.0894 25.6875 18.465 25.6875C16.7972 25.6875 12.7463 19.4897 10.3162 12.4275C9.84375 11.0287 9.36375 10.5 8.12438 10.5H3.16781C1.73813 10.5 1.5 11.1722 1.5 11.8931C1.5 13.1906 3.16781 19.7241 9.26813 28.3716C13.3191 34.2778 19.0856 37.4522 24.2803 37.4522C27.4266 37.4522 27.8072 36.7312 27.8072 35.5303V31.0622C27.8072 29.6212 28.0931 29.3812 29.0944 29.3812C29.8088 29.3812 31.0959 29.7647 34.0031 32.5997C37.3388 35.9625 37.9106 37.5 39.7697 37.5H44.6784C46.1081 37.5 46.7756 36.7791 46.3941 35.3859C45.9656 33.9928 44.3447 31.9753 42.2475 29.5734C41.1038 28.2291 39.3881 26.7394 38.8641 26.0184C38.1497 25.0575 38.34 24.6731 38.8641 23.8088C38.8162 23.8088 44.8219 15.2569 45.4406 12.3713" />
-                </svg>
-                <h5>VoteEZ</h5>
-            </div>
+    <aside role="navigation" id="aside"
+        class="flex fixed w-72 overflow-y-auto h-screen flex-col items-center gap-y-8 bg-blue-800 px-6 -translate-x-full lg:translate-x-0 transition-transform ease-in-out duration-500">
+        <button type="button" id="close-side-btn" class="bg-none border-none lg:invisible self-end mt-2"
+            title="Close Side navigation" aria-haspopup="menu" aria-label="Close Side navigation" aria-expanded="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 512 512">
+                <path class="fill-white"
+                    d="m427.314 107.313l-22.628-22.626L256 233.373L107.314 84.687l-22.628 22.626L233.373 256L84.686 404.687l22.628 22.626L256 278.627l148.686 148.686l22.628-22.626L278.627 256l148.687-148.687z" />
+            </svg>
 
-            <div class="container">
-                <ul role="list">
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" />
+        </button>
+        <div class="flex w-full flex-row items-center justify-start px-4 gap-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-12 h-12 fill-white">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M45.4406 12.375C45.7744 11.3175 45.4406 10.5487 43.9641 10.5487H39.0544C37.8159 10.5487 37.2441 11.2219 36.9103 11.9419C36.9103 11.9419 34.3847 18.0919 30.8578 22.0791C29.7141 23.2322 29.19 23.6166 28.5703 23.6166C28.2366 23.6166 27.8072 23.2322 27.8072 22.1756V12.3253C27.8072 11.0766 27.4266 10.5 26.3775 10.5H18.6562C17.8931 10.5 17.4169 11.0766 17.4169 11.6531C17.4169 12.8541 19.1803 13.1428 19.3706 16.5056V23.8125C19.3706 25.3978 19.0894 25.6875 18.465 25.6875C16.7972 25.6875 12.7463 19.4897 10.3162 12.4275C9.84375 11.0287 9.36375 10.5 8.12438 10.5H3.16781C1.73813 10.5 1.5 11.1722 1.5 11.8931C1.5 13.1906 3.16781 19.7241 9.26813 28.3716C13.3191 34.2778 19.0856 37.4522 24.2803 37.4522C27.4266 37.4522 27.8072 36.7312 27.8072 35.5303V31.0622C27.8072 29.6212 28.0931 29.3812 29.0944 29.3812C29.8088 29.3812 31.0959 29.7647 34.0031 32.5997C37.3388 35.9625 37.9106 37.5 39.7697 37.5H44.6784C46.1081 37.5 46.7756 36.7791 46.3941 35.3859C45.9656 33.9928 44.3447 31.9753 42.2475 29.5734C41.1038 28.2291 39.3881 26.7394 38.8641 26.0184C38.1497 25.0575 38.34 24.6731 38.8641 23.8088C38.8162 23.8088 44.8219 15.2569 45.4406 12.3713" />
+                <title>VoteEZ Logo</title>
+            </svg>
+            <h5 class="text-white font-semibold text-2xl">VoteEZ</h5>
+        </div>
+
+        <div class="w-full">
+            <nav aria-label="Side nav menu">
+                <ul role="list" class="flex gap-y-3 flex-col">
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
+                                <path fill="currentColor"
+                                    d="m12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
                             </svg>
                             Dashboard
                         </a>
                     </li>
 
-                    <li class="link-active">
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M18 11.8992H17.32L15.32 13.6991H17.23L19 15.499H5L6.78 13.6991H8.83L6.83 11.8992H6L3 14.599V18.1988C3 18.6761 3.21071 19.1339 3.58579 19.4715C3.96086 19.809 4.46957 19.9987 5 19.9987H19C19.5304 19.9987 20.0391 19.809 20.4142 19.4715C20.7893 19.1339 21 18.6761 21 18.1988V14.599L18 11.8992ZM17 7.35451L12.05 11.8092L8.5 8.62342L13.46 4.16872L17 7.35451ZM12.76 2.26085L6.39 7.99346C6.2973 8.07672 6.22375 8.17561 6.17357 8.28448C6.12339 8.39335 6.09756 8.51006 6.09756 8.62792C6.09756 8.74578 6.12339 8.86249 6.17357 8.97136C6.22375 9.08023 6.2973 9.17912 6.39 9.26238L11.34 13.6991C11.73 14.0681 12.36 14.0681 12.75 13.6991L19.11 7.99346C19.2027 7.91021 19.2763 7.81131 19.3264 7.70244C19.3766 7.59358 19.4024 7.47687 19.4024 7.35901C19.4024 7.24114 19.3766 7.12444 19.3264 7.01557C19.2763 6.9067 19.2027 6.8078 19.11 6.72455L14.16 2.26985C14.0698 2.18489 13.9615 2.11712 13.8416 2.07054C13.7218 2.02395 13.5927 1.99952 13.4621 1.99868C13.3315 1.99784 13.2021 2.02061 13.0815 2.06565C12.9609 2.11068 12.8516 2.17706 12.76 2.26085Z" />
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
+                                <path fill="currentColor"
+                                    d="m18 13l3 3v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4l3-3h.83l2 2H6.78L5 17h14l-1.77-2h-1.91l2-2H18m1 7v-1H5v1h14m-7.66-5l-4.95-4.93a.996.996 0 0 1 0-1.41l6.37-6.37a.975.975 0 0 1 1.4.01l4.95 4.95c.39.39.39 1.02 0 1.41L12.75 15a.962.962 0 0 1-1.41 0m2.12-10.59L8.5 9.36l3.55 3.54L17 7.95l-3.54-3.54Z" />
                             </svg>
-                            Vote
+                            Cast Vote
                         </a>
                     </li>
 
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21 14V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H10V5H5V19H19V14H21Z" />
-                                <path d="M21 7H17V3H15V7H11V9H15V13H17V9H21V7Z" />
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
+                                <path fill="currentColor"
+                                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM5.92 19H5v-.92l9.06-9.06l.92.92L5.92 19zM20.71 5.63l-2.34-2.34c-.2-.2-.45-.29-.71-.29s-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83a.996.996 0 0 0 0-1.41z" />
                             </svg>
-                            Create
+                            Create Election
                         </a>
                     </li>
 
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 7.5V15H15V21H1.5V22.5H0V0H1.5V1.5H18V7.5H24ZM1.5 3V7.5H16.5V3H1.5ZM13.5 19.5V15H1.5V19.5H13.5ZM22.5 13.5V9H1.5V13.5H22.5Z" />
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="fill-white w-7 h-7">
+                                <path fill="currentColor"
+                                    d="M14 23h8v2h-8zm-4 0h2v2h-2zm4-5h8v2h-8zm-4 0h2v2h-2zm4-5h8v2h-8zm-4 0h2v2h-2z" />
+                                <path fill="currentColor"
+                                    d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2ZM12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z" />
                             </svg>
-                            Results
+                            Election Results
                         </a>
                     </li>
                 </ul>
+            </nav>
+        </div>
 
-            </div>
-
-            <div class="bottom-container">
-                <ul>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <div class="w-full border-t-[1px] mt-[60%] lg:mt-0">
+            <nav aria-label="side nav menu">
+                <ul class="flex gap-y-3 flex-col">
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
                                 <g fill="none" stroke="currentColor" stroke-width="2">
                                     <path stroke-linejoin="round"
                                         d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
                                     <circle cx="12" cy="7" r="3" />
                                 </g>
-                            </svg>Profile</a>
+                            </svg>
+                            Profile</a>
                     </li>
 
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <li class="hover:bg-blue-950 rounded">
+                        <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
                                 <path
                                     d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h7v2H5v14h7v2H5Zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5l-5 5Z" />
                             </svg>
@@ -88,96 +105,104 @@
                     </li>
 
                 </ul>
-            </div>
-            <button type="button" id="close-nav">
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
-                    <path fill="currentColor" fill-rule="evenodd" d="M17.5 17.5L9.25 12l8.25-5.5l-1-1.5L6 12l10.5 7z" />
+            </nav>
+        </div>
+    </aside>
+
+    <div class="lg:ml-72">
+        <header class="px-2 flex flex-row justify-between items-center shadow-sm border-b-2">
+            <button type="button" id="open-side-btn" class="bg-none rounded
+             border-none lg:invisible hover:bg-blue-50 focus:bg-blue-50" title="Open Side navigation"
+                aria-haspopup="menu" aria-label="Open Side navigation" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
+                    <path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z" />
                 </svg>
             </button>
-        </aside>
-
-        <div class="head-main">
-            <header>
-                <button type="button" id="open-nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z" />
-                    </svg>
-                </button>
 
 
-                <div class="nav-profile">
+            <div class="flex items-center gap-x-2 p-2">
+                <img src="/static/Images/IMG_0512.jpeg" alt="profile-img" class="w-10 h-10 object-cover rounded-full">
+                <div>
+                    <h6 class="text-gray-900 text-sm font-semibold">Jacob Jobs</h6>
+                    <p class="text-sm font-normal text-gray-300 -mt-1">admin@gmail.com</p>
+                </div>
+            </div>
 
-                    <img src="/static/Images/IMG_0512.jpeg" alt="profile-img">
+        </header>
+        <main class="px-4 py-8">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol role="list" class="flex flex-row items-center">
+                        <li>
+                            <a href="" class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 shrink-0"
+                                    aria-hidden="true">
+                                    <path class="fill-gray-400"
+                                        d="m18 13l3 3v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4l3-3h.83l2 2H6.78L5 17h14l-1.77-2h-1.91l2-2H18m1 7v-1H5v1h14m-7.66-5l-4.95-4.93a.996.996 0 0 1 0-1.41l6.37-6.37a.975.975 0 0 1 1.4.01l4.95 4.95c.39.39.39 1.02 0 1.41L12.75 15a.962.962 0 0 1-1.41 0m2.12-10.59L8.5 9.36l3.55 3.54L17 7.95l-3.54-3.54Z" />
+                                </svg>
+                                <span class="hidden ml-2 text-sm font-medium text-gray-400">Vote</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" class="w-5 h-5 shrink-0">
+                                    <path class="fill-gray-400" fill-rule="evenodd"
+                                        d="M4.109 14L9.466 1h1.352L5.46 14H4.109Z" clip-rule="evenodd" />
+                                </svg>
+                                <a href="" class="ml-2 text-sm font-medium text-gray-400">Search</a>
+                            </div>
+
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="mt-12">
+                <form action="" method="get" class="flex flex-col items-center">
+                    <label for="search_vote" class="font-semibold text-xl truncate">Ready to have your say in the
+                        election?</label>
+                    <div class="relative mt-2">
+                        <p class="absolute text-black text-xl font-semibold top-[0.70rem] left-4">#</p>
+                        <input type="search" name="search_vote" id="search" placeholder="Enter code here"
+                            class="h-12 text-xl rounded-full pl-8 remove_clear border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-lg max-w-[36rem] lg:w-[36rem]">
+                        <button type="submit"
+                            class="absolute bg-blue-800 rounded-full h-8 w-8 top-2 right-2 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path class="fill-white"
+                                    d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-12">
+                    <h4 class="text-center font-semibold">Election Recently Participated</h4>
+                    <div class="flex flex-row flex-wrap justify-center w-[inherit] gap-4 pt-4">
+                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
+                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
+                            <p class="text-sm">#DEMDEMO</p>
+                            <p class="text-xs">23 July 2023</p>
+                        </div>
+
+                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
+                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
+                            <p class="text-sm">#DEMDEMO</p>
+                            <p class="text-xs">23 July 2023</p>
+                        </div>
+
+                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
+                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
+                            <p class="text-sm">#DEMDEMO</p>
+                            <p class="text-xs">23 July 2023</p>
+                        </div>
 
 
-                    <div>
-                        <h6>Jacob Jobs</h6>
-                        <p>admin@gmail.com</p>
+                        
                     </div>
                 </div>
-
-            </header>
-
-            <main>
-                <section id="vote-search">
-                    <div class="breadcrumb">
-                        <ol role="list">
-                            <li>
-                                <a href="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path
-                                            d="M18 11.8992H17.32L15.32 13.6991H17.23L19 15.499H5L6.78 13.6991H8.83L6.83 11.8992H6L3 14.599V18.1988C3 18.6761 3.21071 19.1339 3.58579 19.4715C3.96086 19.809 4.46957 19.9987 5 19.9987H19C19.5304 19.9987 20.0391 19.809 20.4142 19.4715C20.7893 19.1339 21 18.6761 21 18.1988V14.599L18 11.8992ZM17 7.35451L12.05 11.8092L8.5 8.62342L13.46 4.16872L17 7.35451ZM12.76 2.26085L6.39 7.99346C6.2973 8.07672 6.22375 8.17561 6.17357 8.28448C6.12339 8.39335 6.09756 8.51006 6.09756 8.62792C6.09756 8.74578 6.12339 8.86249 6.17357 8.97136C6.22375 9.08023 6.2973 9.17912 6.39 9.26238L11.34 13.6991C11.73 14.0681 12.36 14.0681 12.75 13.6991L19.11 7.99346C19.2027 7.91021 19.2763 7.81131 19.3264 7.70244C19.3766 7.59358 19.4024 7.47687 19.4024 7.35901C19.4024 7.24114 19.3766 7.12444 19.3264 7.01557C19.2763 6.9067 19.2027 6.8078 19.11 6.72455L14.16 2.26985C14.0698 2.18489 13.9615 2.11712 13.8416 2.07054C13.7218 2.02395 13.5927 1.99952 13.4621 1.99868C13.3315 1.99784 13.2021 2.02061 13.0815 2.06565C12.9609 2.11068 12.8516 2.17706 12.76 2.26085Z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                        <path fill="currentColor" fill-rule="evenodd"
-                                            d="m6.5 17.5l8.25-5.5L6.5 6.5l1-1.5L18 12L7.5 19z" />
-                                    </svg>
-                                    <a href="">Search</a>
-                                </div>
-
-                            </li>
-
-                        </ol>
-                    </div>
-
-                    <div>
-                        <form action="" method="get">
-
-                            <label for="search">Ready to have your say in the election?</label>
-                            <div>
-                                <h4>#</h4>
-                                <input type="search" name="search" id="search" placeholder="Enter code here">
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                            d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4Z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- <div class="recent-election-cont">
-                        <h3>Recent Election</h3>
-
-                        <div class="recent-election">
-                            <div>
-                                <h4>FUNAI SUG ELECTIONS</h4>
-                                <h6>#DEMDEMO</h6>
-                                <p>23 July 2024</p>
-                            </div>
-                        </div>
-                    </div> -->
-                </section>
-            </main>
-        </div>
-
-    </section>
-    <script src="/static/JS/script.js"></script>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>
