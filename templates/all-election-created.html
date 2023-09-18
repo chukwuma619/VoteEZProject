@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/styles/styles.css">
     <script src="/static/JS/script.js" defer></script>
-    <title>VoteEZ - Search</title>
+    <title>VoteEZ - Dashboard</title>
 </head>
 
 <body>
     <aside role="navigation" id="aside"
-        class="flex fixed w-72 overflow-y-auto h-screen flex-col items-center gap-y-8 bg-blue-800 px-6 -translate-x-full lg:translate-x-0 transition-transform ease-in-out duration-500">
+        class="flex z-50 fixed w-72 overflow-y-auto h-screen flex-col items-center gap-y-8 bg-blue-800 px-6 -translate-x-full lg:translate-x-0 transition-transform ease-in-out duration-500">
         <button type="button" id="close-side-btn" class="bg-none border-none lg:invisible self-end mt-2"
             title="Close Side navigation" aria-haspopup="menu" aria-label="Close Side navigation" aria-expanded="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 512 512">
@@ -138,68 +138,145 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 shrink-0"
                                     aria-hidden="true">
                                     <path class="fill-gray-400"
-                                        d="m18 13l3 3v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4l3-3h.83l2 2H6.78L5 17h14l-1.77-2h-1.91l2-2H18m1 7v-1H5v1h14m-7.66-5l-4.95-4.93a.996.996 0 0 1 0-1.41l6.37-6.37a.975.975 0 0 1 1.4.01l4.95 4.95c.39.39.39 1.02 0 1.41L12.75 15a.962.962 0 0 1-1.41 0m2.12-10.59L8.5 9.36l3.55 3.54L17 7.95l-3.54-3.54Z" />
+                                        d="m12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
                                 </svg>
-                                <span class="hidden ml-2 text-sm font-medium text-gray-400">Vote</span>
+                                <span class="hidden ml-2 text-sm font-medium text-gray-400">Dashboard</span>
                             </a>
-                        </li>
-                        <li>
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" class="w-5 h-5 shrink-0">
-                                    <path class="fill-gray-400" fill-rule="evenodd"
-                                        d="M4.109 14L9.466 1h1.352L5.46 14H4.109Z" clip-rule="evenodd" />
-                                </svg>
-                                <a href="" class="ml-2 text-sm font-medium text-gray-400">Search</a>
-                            </div>
-
                         </li>
                     </ol>
                 </nav>
             </div>
 
             <div class="mt-12">
-                <form action="" method="get" class="flex flex-col items-center">
-                    <label for="search_vote" class="font-semibold text-xl truncate">Ready to have your say in the
-                        election?</label>
-                    <div class="relative mt-2">
-                        <p class="absolute text-black text-xl font-semibold top-[0.70rem] left-4">#</p>
-                        <input type="search" name="search_vote" id="search" placeholder="Enter code here"
-                            class="h-12 text-xl rounded-full pl-8 remove_clear border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-lg max-w-[36rem] lg:w-[36rem]">
-                        <button type="submit"
-                            class="absolute bg-blue-800 rounded-full h-8 w-8 top-2 right-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path class="fill-white"
-                                    d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4Z" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-
-                <div class="mt-12">
-                    <h4 class="text-center font-semibold">Election Recently Participated</h4>
-                    <div class="flex flex-row flex-wrap justify-center w-[inherit] gap-4 pt-4">
-                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
-                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
-                            <p class="text-sm">#DEMDEMO</p>
-                            <p class="text-xs">23 July 2023</p>
-                        </div>
-
-                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
-                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
-                            <p class="text-sm">#DEMDEMO</p>
-                            <p class="text-xs">23 July 2023</p>
-                        </div>
-
-                        <div class="bg-gray-50 shadow rounded max-w-sm basis-full p-4">
-                            <a href="" class="font-normal text-base text-blue-800">AE-FUNAI SUG Election</a>
-                            <p class="text-sm">#DEMDEMO</p>
-                            <p class="text-xs">23 July 2023</p>
-                        </div>
-
-
-                        
-                    </div>
+                <div class="flex justify-end">
+                    <a href="" class="py-2 px-3 text-sm rounded bg-blue-800 text-white hover:bg-blue-600">Create
+                        Election</a>
                 </div>
+
+                <ul role="list" class="max-w-[60rem] mx-auto divide-y-2 mt-8">
+                    <li class="py-5 gap-y-5 flex justify-between items-center">
+                        <div class="min-w-0">
+                            <div class="flex gap-x-3 justify-start">
+                                <div class="relative">
+                                    <p class="text-md font-semibold leading-6">2023 SUG ELECTION</p>
+                                    <p
+                                        class="whitespace-nowrap absolute right-0 top-0 -mr-[4.5rem] rounded-md bg-green-100 px-[0.375rem]  py-[0.1rem] text-xs leading-none font-medium shadow ring-inset">
+                                        Complete</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-1 flex items-center flex-wrap gap-x-2 text-xs leading-6">
+                                <p class="whitespace-nowrap">Created on
+                                    <time datetime="2023-03-17T00:00Z">March 17, 2023</time>
+                                </p>
+                                <p class="whitespace-nowrap">with 9 positions and 250 eligble voters</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-none items-center gap-x-4">
+                            <a href=""
+                                class="hidden md:block ring-inset ring-gray-100 p-1 shadow font-semibold text-sm">View
+                                Results</a>
+                            <div class="relative">
+                                <button type="button" id="election-detail-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true" class="w-5 h-5">
+                                        <path
+                                            d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <div class="hidden right-0 z-10 mt-2 w-32 origin-top-right rounded py-2 bg-white opacity-100 shadow"
+                                    role="menu">
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3">Edit</a>
+                                    <a href="#" class="block md:hidden leading-6 text-sm py-1 px-3">View Results</a>
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3 text-red-500">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="py-5 gap-y-5 flex justify-between items-center">
+                        <div class="min-w-0">
+                            <div class="flex gap-x-3 justify-start">
+                                <div class="relative">
+                                    <p class="text-md font-semibold leading-6">2024 SUG ELECTION</p>
+                                    <p
+                                        class="whitespace-nowrap absolute right-0 top-0 -mr-[4.5rem] rounded-md bg-yellow-100 px-[0.375rem]  py-[0.1rem] text-xs leading-none font-medium shadow ring-inset">
+                                        ongoing</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-1 flex items-center flex-wrap gap-x-2 text-xs leading-6">
+                                <p class="whitespace-nowrap">Created on
+                                    <time datetime="2023-03-17T00:00Z">March 17, 2023</time>
+                                </p>
+                                <p class="whitespace-nowrap">with 9 positions and 250 eligble voters</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-none items-center gap-x-4">
+                            <a href=""
+                                class="hidden md:block ring-inset ring-gray-100 p-1 shadow font-semibold text-sm">View
+                                Results</a>
+                            <div class="relative">
+                                <button type="button" id="election-detail-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true" class="w-5 h-5">
+                                        <path
+                                            d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <div class="hidden right-0 z-10 mt-2 w-32 origin-top-right rounded py-2 bg-white opacity-100 shadow"
+                                    role="menu">
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3">Edit</a>
+                                    <a href="#" class="block md:hidden leading-6 text-sm py-1 px-3">View Results</a>
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3 text-red-500">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="py-5 gap-y-5 flex justify-between items-center">
+                        <div class="min-w-0">
+                            <div class="flex gap-x-3 justify-start">
+                                <div class="relative">
+                                    <p class="text-md font-semibold leading-6">2025 SUG ELECTION</p>
+                                    <p
+                                        class="whitespace-nowrap absolute right-0 top-0 -mr-[4.5rem] rounded-md bg-gray-100 px-[0.375rem]  py-[0.1rem] text-xs leading-none font-medium shadow ring-inset">
+                                        Pending</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-1 flex items-center flex-wrap gap-x-2 text-xs leading-6">
+                                <p class="whitespace-nowrap">Created on
+                                    <time datetime="2023-03-17T00:00Z">March 17, 2023</time>
+                                </p>
+                                <p class="whitespace-nowrap">with 9 positions and 250 eligble voters</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-none items-center gap-x-4">
+                            <a href=""
+                                class="hidden md:block ring-inset ring-gray-100 p-1 shadow font-semibold text-sm">View
+                                Results</a>
+                            <div class="relative">
+                                <button type="button" id="election-detail-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true" class="w-5 h-5">
+                                        <path
+                                            d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <div class="hidden right-0 z-10 mt-2 w-32 origin-top-right rounded py-2 bg-white opacity-100 shadow"
+                                    role="menu">
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3">Edit</a>
+                                    <a href="#" class="block md:hidden leading-6 text-sm py-1 px-3">View Results</a>
+                                    <a href="#" class="block leading-6 text-sm py-1 px-3 text-red-500">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </main>
     </div>

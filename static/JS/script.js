@@ -1,15 +1,30 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Side Navigation
-//   const open_nav_button = document.getElementById("open-nav");
-//   const close_nav_button = document.getElementById("close-nav");
-//   const side_nav = document.getElementById("aside");
+// Navigation
 
-//   open_nav_button.addEventListener("click", function () {
-//     side_nav.classList.add("default-translate");
-//   });
+const buttonOpen = document.querySelector('#open-side-btn');
+const buttonClose = document.querySelector('#close-side-btn')
+const aside = document.querySelector('aside')
 
-//   close_nav_button.addEventListener("click", function () {
-//     side_nav.classList.remove("default-translate");
-//   });
+function sideNavBarToggle() {
+    // Function to toggle Side Navbar
+    aside.classList.toggle("translate-x-0")
+}
 
-// });
+// add event to Open/Close Nav Button
+buttonOpen.addEventListener('click', sideNavBarToggle)
+buttonClose.addEventListener('click', sideNavBarToggle)
+
+
+// Election Deatils Button
+
+const electionDetailsButton = document.querySelectorAll('#election-detail-btn');
+
+for (const button of electionDetailsButton) {
+    button.addEventListener('click', (e)=>{
+        const detailList = e.currentTarget.parentElement.querySelector('div')
+        detailList.style.display = "absolute"
+        console.log(detailList.classList);
+
+        // const  = parentButtonContainer.querySelector('div')
+        // console.log(detailList.classList);
+    })
+}
