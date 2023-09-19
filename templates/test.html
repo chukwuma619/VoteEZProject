@@ -1,100 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacked List with Actions Menu</title>
+    <title>Document</title>
+</head>
+
+<body>
     <style>
-        /* Basic styles for the list */
-        .stacked-list {
+        ul {
             list-style: none;
-            padding: 0;
+        }
+        li a {
+            color: red;
         }
 
-        .stacked-list li {
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Styles for the actions menu */
-        .actions-menu {
+        li div {
             display: none;
-            position: relative;
         }
 
-        .stacked-list li:hover .actions-menu {
+        li a:hover:where(li div){
             display: block;
         }
-
-        .actions-menu ul {
-            list-style: none;
-            padding: 0;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background-color: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .actions-menu li {
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* Styles for inline links */
-        .inline-link {
-            text-decoration: none;
-            color: #007bff;
-            margin-right: 10px;
-        }
     </style>
-</head>
-<body>
-    <ul class="stacked-list">
-        <li>
-            <span>Item 1</span>
-            <div class="actions-menu">
-                <ul>
-                    <li>Action 1</li>
-                    <li>Action 2</li>
-                    <li>Action 3</li>
-                </ul>
-            </div>
-            <a href="#" class="inline-link">Link 1</a>
-        </li>
-        <li>
-            <span>Item 2</span>
-            <div class="actions-menu">
-                <ul>
-                    <li>Action 1</li>
-                    <li>Action 2</li>
-                </ul>
-            </div>
-            <a href="#" class="inline-link">Link 2</a>
-        </li>
-        <li>
-            <span>Item 3</span>
-            <div class="actions-menu">
-                <ul>
-                    <li>Action 1</li>
-                </ul>
-            </div>
-            <a href="#" class="inline-link">Link 3</a>
-        </li>
-    </ul>
-
-    <script>
-        // JavaScript to handle menu display
-        const listItems = document.querySelectorAll('.stacked-list li');
-
-        // listItems.forEach((item) => {
-        //     item.addEventListener('mouseleave', () => {
-        //         console.log(item);
-        //         // item.querySelector('.actions-menu').style.display = 'none';
-        //     });
-        // });
-    </script>
+    <div>
+        <ul role="list">
+            <li>
+                <a href="">Hover here</a>
+                <div>
+                    <p>Link 1</p>
+                    <p>Link 2</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </body>
+
 </html>

@@ -14,8 +14,8 @@
 
 <body>
     <aside role="navigation" id="aside"
-        class="flex fixed w-72 overflow-y-auto h-screen flex-col items-center gap-y-8 bg-blue-800 px-6 -translate-x-full lg:translate-x-0 transition-transform ease-in-out duration-500">
-        <button type="button" id="close-side-btn" class="bg-none border-none lg:invisible self-end mt-2"
+        class="flex z-50 fixed w-72 overflow-y-auto h-screen flex-col items-center gap-y-8 bg-blue-800 px-6 -translate-x-full lg:translate-x-0 transition-transform ease-in-out duration-500">
+        <button type="button" id="close-side-btn" class="bg-none border-none lg:hidden  self-end mt-2"
             title="Close Side navigation" aria-haspopup="menu" aria-label="Close Side navigation" aria-expanded="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 512 512">
                 <path class="fill-white"
@@ -23,7 +23,7 @@
             </svg>
 
         </button>
-        <div class="flex w-full flex-row items-center justify-start px-4 gap-x-4">
+        <div class="flex w-full flex-row items-center justify-start px-4 gap-x-4 lg:mt-6">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-12 h-12 fill-white">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M45.4406 12.375C45.7744 11.3175 45.4406 10.5487 43.9641 10.5487H39.0544C37.8159 10.5487 37.2441 11.2219 36.9103 11.9419C36.9103 11.9419 34.3847 18.0919 30.8578 22.0791C29.7141 23.2322 29.19 23.6166 28.5703 23.6166C28.2366 23.6166 27.8072 23.2322 27.8072 22.1756V12.3253C27.8072 11.0766 27.4266 10.5 26.3775 10.5H18.6562C17.8931 10.5 17.4169 11.0766 17.4169 11.6531C17.4169 12.8541 19.1803 13.1428 19.3706 16.5056V23.8125C19.3706 25.3978 19.0894 25.6875 18.465 25.6875C16.7972 25.6875 12.7463 19.4897 10.3162 12.4275C9.84375 11.0287 9.36375 10.5 8.12438 10.5H3.16781C1.73813 10.5 1.5 11.1722 1.5 11.8931C1.5 13.1906 3.16781 19.7241 9.26813 28.3716C13.3191 34.2778 19.0856 37.4522 24.2803 37.4522C27.4266 37.4522 27.8072 36.7312 27.8072 35.5303V31.0622C27.8072 29.6212 28.0931 29.3812 29.0944 29.3812C29.8088 29.3812 31.0959 29.7647 34.0031 32.5997C37.3388 35.9625 37.9106 37.5 39.7697 37.5H44.6784C46.1081 37.5 46.7756 36.7791 46.3941 35.3859C45.9656 33.9928 44.3447 31.9753 42.2475 29.5734C41.1038 28.2291 39.3881 26.7394 38.8641 26.0184C38.1497 25.0575 38.34 24.6731 38.8641 23.8088C38.8162 23.8088 44.8219 15.2569 45.4406 12.3713" />
@@ -57,11 +57,12 @@
 
                     <li class="hover:bg-blue-950 rounded">
                         <a href="" class="p-4 flex items-center gap-x-3 text-white text-base font-semibold">
+
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-white w-7 h-7">
                                 <path fill="currentColor"
-                                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM5.92 19H5v-.92l9.06-9.06l.92.92L5.92 19zM20.71 5.63l-2.34-2.34c-.2-.2-.45-.29-.71-.29s-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83a.996.996 0 0 0 0-1.41z" />
+                                    d="M21 18H2v2h19v-2zm-2-8v4H4v-4h15m1-2H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm1-4H2v2h19V4z" />
                             </svg>
-                            Create Election
+                            Elections
                         </a>
                     </li>
 
@@ -80,7 +81,7 @@
             </nav>
         </div>
 
-        <div class="w-full border-t-[1px] self-end lg:mt-0">
+        <div class="w-full border-t-[1px] mt-36 md:mt-4">
             <nav aria-label="side nav menu">
                 <ul class="flex gap-y-3 flex-col">
                     <li class="hover:bg-blue-950 rounded">
@@ -197,7 +198,7 @@
                         </div>
 
 
-                        
+
                     </div>
                 </div>
             </div>
