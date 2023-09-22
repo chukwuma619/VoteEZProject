@@ -1,5 +1,4 @@
 {% load static tailwind_tags %}
-{% load tailwind_filters %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,17 +29,15 @@
         </div>
       </div>
 
+        {% if form.non_field_errors %}
+              <div class="w-[inherit] bg-red-200 p-1 text-center -mb-2.5 text-xs rounded">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+        {% endif %}
+
       <form action="" method="post" class="w-full flex flex-col gap-y-6">
-          {% if form.non_field_errors %}
-              <div class="bg-red-300">
-              {% for error in form.non_field_errors %}
-              	{{ error }}
-              {% endfor %}
-
-          </div>
-
-          {% endif %}
-
         {% csrf_token %}
         <div>
 
@@ -85,9 +82,6 @@
       </div>
     </div>
   </div>
-<script>
-    console.log(' {{ form.non_field_error}}')
-</script>
 </body>
 
 </html>
