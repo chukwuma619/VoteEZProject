@@ -135,20 +135,54 @@
                 <nav aria-label="breadcrumb">
                     <ol role="list" class="flex flex-row items-center">
                         <li>
-                            <a href="" class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 shrink-0" aria-hidden="true">
-                                    <path class="fill-gray-400"
-                                        d="m12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
-                                </svg>
-                                <span class="hidden ml-2 text-sm font-medium text-gray-400">Dashboard</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 shrink-0">
+                                <path class="fill-gray-400"
+                                    d="M21 18H2v2h19v-2zm-2-8v4H4v-4h15m1-2H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm1-4H2v2h19V4z" />
+                            </svg>
+                            <span class="hidden ml-2 text-sm font-medium text-gray-400">Election</span>
                             </a>
+                        </li>
+
+                        <li>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" class="w-5 h-5 shrink-0">
+                                    <path class="fill-gray-400" fill-rule="evenodd"
+                                        d="M4.109 14L9.466 1h1.352L5.46 14H4.109Z" clip-rule="evenodd" />
+                                </svg>
+                                <a href="" class="ml-2 text-sm font-medium text-gray-400">Create Election</a>
+                            </div>
                         </li>
                     </ol>
                 </nav>
             </div>
 
             <div class="mt-12">
-            
+                <h2 class="font-semibold text-3xl lg:text-4xl truncate">Create an Election</h2>
+                <form action="" method="post" class="flex flex-row flex-wrap mt-6 gap-6 justify-start">
+                    <div class="basis-full md:basis-form">
+                        <label for="name" class="block text-md font-medium">Name of Election</label>
+                        <input class="w-full h-9 mt-2 rounded pl-2 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm" type="text" name="name" id="name">
+                    </div>
+
+                    <div class="basis-full md:basis-form">
+                        <label for="participant" class="block text-md font-medium">Participant</label>
+                        <input class="w-full h-9 mt-2 rounded pl-2 pt-0.5 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm" type="file" name="participant" id="participant">
+                    </div>
+
+                    <div class="basis-form">
+                        <label for="start_date" class="block text-md font-medium">Start date</label>
+                        <input class="h-9 rounded mt-2 pl-2 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm" type="datetime-local" name="start_date" id="start_date">
+                    </div>
+
+                    <div class="basis-form">
+                        <label for="end_date" class="block text-md font-medium">Start date</label>
+                        <input class="h-9 rounded pl-2 mt-2 border-none outline outline-blue-600 outline-1 focus:ring-2 placeholder:text-sm" type="datetime-local" name="end_date" id="end_date">
+                    </div>
+
+                    <div class="basis-full mt-4">
+                        <button class="py-2 px-6 text-sm rounded bg-blue-800 text-white hover:bg-blue-600" type="submit">Create</button>
+                    </div>
+                </form>
             </div>
         </main>
     </div>
