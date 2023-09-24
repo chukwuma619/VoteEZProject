@@ -792,6 +792,14 @@ select {
   margin-right: auto;
 }
 
+.-mb-2 {
+  margin-bottom: -0.5rem;
+}
+
+.-mb-2\.5 {
+  margin-bottom: -0.625rem;
+}
+
 .-mr-\[4\.5rem\] {
   margin-right: -4.5rem;
 }
@@ -834,14 +842,6 @@ select {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.-mb-2 {
-  margin-bottom: -0.5rem;
-}
-
-.-mb-2\.5 {
-  margin-bottom: -0.625rem;
 }
 
 .block {
@@ -993,6 +993,10 @@ select {
   flex-shrink: 0;
 }
 
+.basis-form {
+  flex-basis: calc(50% - 0.75rem);
+}
+
 .basis-full {
   flex-basis: 100%;
 }
@@ -1003,6 +1007,11 @@ select {
 
 .-translate-x-full {
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-0 {
+  --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1170,9 +1179,9 @@ select {
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 
-.bg-red-300 {
+.bg-red-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1183,11 +1192,6 @@ select {
 .bg-yellow-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity));
-}
-
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -1449,6 +1453,14 @@ select {
   outline-color: #2563eb;
 }
 
+.outline-red-200 {
+  outline-color: #fecaca;
+}
+
+.outline-red-300 {
+  outline-color: #fca5a5;
+}
+
 .ring-inset {
   --tw-ring-inset: inset;
 }
@@ -1456,6 +1468,10 @@ select {
 .ring-gray-100 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(243 244 246 / var(--tw-ring-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-transform {
@@ -1470,6 +1486,13 @@ select {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.remove_clear::--webkit-search-cancel-button,
+.remove_clear::--webkit-search-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 
 .placeholder\:text-lg::-moz-placeholder {
@@ -1544,6 +1567,10 @@ select {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:basis-form {
+    flex-basis: calc(50% - 0.75rem);
   }
 }
 

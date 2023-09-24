@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.remove_clear::--webkit-search-cancel-button,
+.remove_clear::--webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
